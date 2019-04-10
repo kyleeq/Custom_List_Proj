@@ -10,9 +10,11 @@ namespace CustomList
     {
         // member variables
         private int count;
+        private int capacity;
+        private T[] originalArray;
+
         public int index;
-        public int length;
-        public T[] originalArray;
+        public int length;        
         public int value;
 
         public int Count
@@ -23,10 +25,26 @@ namespace CustomList
             }
         }
 
+        public int Capacity
+        {
+            get
+            {
+                return capacity;
+            }
+        }
+
+
         // constructor
+        public CustomList()
+        {
+            count = 0;
+            capacity = 4;
+            originalArray = new T[capacity];
+
+        }
 
         // member methods
-        public int GetIndex(T[] value)
+        public int GetIndex(array[] value)
         {
             for (int i = 0; i <= value; i++)
             {
@@ -34,7 +52,7 @@ namespace CustomList
             }
         }
 
-        public T AddThingy(index)
+        public T[] AddThingy(index)
         {
 
             count++;
