@@ -9,19 +9,28 @@ namespace CustomList
     public class CustomList<T>
     {
         // member variables
-        private int count;
+        private readonly int count;
+        public int index;
+        public int length;
 
         public int Count
         {
-            get
-            {
-
-            }
+                get
+                {       
+                    return count;                    
+                }
         }
 
         // constructor
 
         // member methods
+        public int GetIndex()
+        {
+            if (int index >= 0 && int index < length)
+            {
+                return Array[index];
+            }
+        }
 
     }
 }
