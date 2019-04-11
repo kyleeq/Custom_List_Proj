@@ -12,25 +12,24 @@ namespace CustomListTests
         {
             // Arrange
             CustomList<int> customList = new CustomList<int>();
-            // check count for 0
+
             int value = 4;
-            int expected = 0;
-            int actual;
+            int expectedCount = 0;
+            int actualCount;
 
             // Act
             customList.AddThingy(4);
             customList.RemoveThingy(value);
-            actual = customList[0];
+            actualCount = customList.Count;
 
             // Assert
-            Assert.AreEqual(expected, actual);
+            Assert.AreEqual(expectedCount, actualCount);
         }
         [TestMethod]
         public void Remove_Test2()
         {
             // Arrange
-            CustomList<int> customList = new CustomList<int>();
-            
+            CustomList<int> customList = new CustomList<int>();            
 
             int value = 2;
             int expected = 3;
@@ -75,20 +74,20 @@ namespace CustomListTests
         {
             // Arrange
             CustomList<int> customList = new CustomList<int>();
-            // count instead
+            
             int value = 3;
-            int expected = 0;
-            int actual;
+            int expected = 2;
+            int actualCount;
 
             // Act
             customList.AddThingy(0);
             customList.AddThingy(1);
             customList.AddThingy(2);
             customList.RemoveThingy(value);
-            actual = customList[3];
+            actualCount = customList.Count;
 
             // Assert
-            Assert.AreEqual(expected, actual);
+            Assert.AreEqual(expected, actualCount);
         }
         [TestMethod]
         public void Remove_Test5()

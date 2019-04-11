@@ -68,9 +68,20 @@ namespace CustomList
             }
             count++;
         }
-        public void RemoveThingy(T lastValue)
+        public void RemoveThingy(T theRemoved)
         {
-
+            for (int i = 0; i < count; i++)
+            {                
+                if (i = theRemoved)
+                {
+                    continue;
+                }
+                else
+                {
+                    newArray[i] = originalArray[i];
+                }
+            }
+            originalArray = newArray;
             count--;
         }
 
