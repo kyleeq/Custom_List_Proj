@@ -12,11 +12,13 @@ namespace CustomList
         private int count;
         private int capacity;
         private T[] originalArray;
+        private T[] newArray;
 
-        public int index;
-        public int length;        
-        public int value;
-
+        public T this[int i]
+        {
+            get { return originalArray[i]; }
+            set { originalArray[i] = value; }
+        }
         public int Count
         {
             get
@@ -40,21 +42,30 @@ namespace CustomList
             count = 0;
             capacity = 4;
             originalArray = new T[capacity];
+      
 
         }
 
         // member methods
-        public int GetIndex(array[] value)
+        
+
+        public void AddThingy(T newValue)
         {
-            for (int i = 0; i <= value; i++)
+            if (count == capacity)
             {
-                if ()
+                capacity *= 2;
+                newArray = new T[capacity];
+                for (int i = 0; i < count; i++)
+                {
+                    newArray[i] = originalArray[i];
+                }
+                originalArray = newArray;
+                originalArray[count] = newValue;                
             }
-        }
-
-        public T[] AddThingy(index)
-        {
-
+            else
+            {
+                originalArray[count] = newValue;                
+            }
             count++;
         }
 

@@ -21,7 +21,7 @@ namespace CustomListTests
 
 
             // Act
-            customList.Add(value);
+            customList.AddThingy(value);
             actual = customList[0];
            
 
