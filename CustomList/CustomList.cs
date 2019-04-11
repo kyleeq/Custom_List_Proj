@@ -68,9 +68,10 @@ namespace CustomList
             }
             count++;
         }
-        public void RemoveThingy(T newValue)
+        public void RemoveThingy(T lastValue)
         {
 
+            count--;
         }
 
     }

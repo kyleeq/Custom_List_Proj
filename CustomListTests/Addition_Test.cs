@@ -17,19 +17,17 @@ namespace CustomListTests
             int value = 5;
             int expected = 5;
             int actual;
-
-
-
+            
             // Act
             customList.AddThingy(value);
             actual = customList[0];
            
-
             // Assert
             Assert.AreEqual(expected, actual);
 
 
         }
+        [TestMethod]
         public void Add_Test2()
         {
             // Arrange
@@ -48,6 +46,7 @@ namespace CustomListTests
             // Assert
             Assert.AreEqual(expected, actual);
         }
+        [TestMethod]
         public void Add_Test3()
         {
             // Arrange
@@ -63,7 +62,7 @@ namespace CustomListTests
             int value8 = 8;
             int value9 = 9;
 
-            int expected = 9;
+            int expected = 10;
             int actual;
             
             // Act
@@ -79,13 +78,12 @@ namespace CustomListTests
             fruitList.AddThingy(value8);
             fruitList.AddThingy(value9);
 
-
             actual = fruitList.Count;
-
-
+            
             // Assert
             Assert.AreEqual(expected, actual);
         }
+        [TestMethod]
         public void Add_Test4()
         {
             // Arrange 
@@ -105,6 +103,7 @@ namespace CustomListTests
             // Assert
             Assert.AreEqual(expected, actual);
         }
+        [TestMethod]
         public void Add_Test5()
         {
             // Arrange
