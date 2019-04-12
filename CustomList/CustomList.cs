@@ -42,13 +42,12 @@ namespace CustomList
             count = 0;
             capacity = 4;
             originalArray = new T[capacity];
-      
+            newArray = new T[capacity];
 
         }
 
         // member methods
         
-
         public void AddThingy(T newValue)
         {
             if (count == capacity)
@@ -60,30 +59,18 @@ namespace CustomList
                     newArray[i] = originalArray[i];
                 }
                 originalArray = newArray;
-                originalArray[count] = newValue;                
+                originalArray[count] = newValue;
             }
             else
             {
-                originalArray[count] = newValue;                
+                originalArray[count] = newValue;
             }
             count++;
         }
-        public void RemoveThingy(T theRemoved)
+        public void RemoveThingy(T removed)
         {
-            for (int i = 0; i < count; i++)
-            {                
-                if (i = theRemoved)
-                {
-                    continue;
-                }
-                else
-                {
-                    newArray[i] = originalArray[i];
-                }
-            }
-            originalArray = newArray;
-            count--;
-        }
 
+        }
     }
 }
+
