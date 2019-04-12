@@ -44,7 +44,7 @@ namespace CustomList
         }
 
         // member methods
-        
+
         public void AddThingy(T newValue)
         {
             T[] newArray = new T[capacity];
@@ -80,6 +80,25 @@ namespace CustomList
             }
             originalArray = newArray;
             count--;
+        }
+        public void ZippidyDippidyDoo(T[] listOne, T[] listTwo)
+        {
+            T[] newArray = new T[capacity];
+            //capacity += listOne[count];
+            //capacity += listTwo[count];
+            if (count == capacity)
+            {
+                capacity *= 2;
+                newArray = new T[capacity];
+            }
+            for (int i = 0; i < count; i += 2)
+            {
+                newArray[i] = listOne[i];
+            }
+            for (int j = 1; j < count; j += 2)
+            {
+                newArray[j] = listOne[j];
+            }
         }
     }
 }
