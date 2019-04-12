@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -6,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace CustomList
 {
-    public class CustomList<T>
+    public class CustomList<T> : IEnumerable
     {
         // member variables
         private int count;
@@ -81,6 +82,14 @@ namespace CustomList
             originalArray = newArray;
             count--;
         }
+
+        public override string ToString()
+        {
+            return "";
+        }
+
+
+
         public void ZippidyDippidyDoo(T[] listOne, T[] listTwo)
         {
             T[] newArray = new T[capacity];
@@ -100,6 +109,18 @@ namespace CustomList
                 newArray[j] = listOne[j];
             }
         }
-    }
+        public IEnumerator GetEnumerable()
+        {
+            for (int i = 0; i < count; i++)
+            {
+                yield return originalArray[i];
+            }
+        }
+
+        public IEnumerator GetEnumerator()
+        {
+            throw new NotImplementedException();
+        }
+    }    
 }
 
