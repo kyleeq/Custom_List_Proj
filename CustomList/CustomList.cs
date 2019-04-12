@@ -12,7 +12,6 @@ namespace CustomList
         private int count;
         private int capacity;
         private T[] originalArray;
-        private T[] newArray;
 
         public T this[int i]
         {
@@ -42,14 +41,13 @@ namespace CustomList
             count = 0;
             capacity = 4;
             originalArray = new T[capacity];
-            newArray = new T[capacity];
-
         }
 
         // member methods
         
         public void AddThingy(T newValue)
         {
+            T[] newArray = new T[capacity];
             if (count == capacity)
             {
                 capacity *= 2;
@@ -67,9 +65,21 @@ namespace CustomList
             }
             count++;
         }
-        public void RemoveThingy(T removed)
+        public void RemoveThingy(T theRemoved)
         {
-
+            T[] newArray = new T[capacity];
+            int j = 0;
+            for (int i = 0; i < count; i++, j++)
+            {
+                if (originalArray[i].Equals(theRemoved))
+                {
+                    j--;
+                    continue;
+                }
+                newArray[j] = originalArray[i];
+            }
+            originalArray = newArray;
+            count--;
         }
     }
 }

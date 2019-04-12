@@ -15,6 +15,7 @@ namespace CustomList
             customList.AddThingy(2);
             customList.AddThingy(3);
             customList.AddThingy(4);
+            customList.RemoveThingy(3);
         }
     }
 }
