@@ -90,16 +90,10 @@ namespace CustomList
 
 
 
-        public void ZippidyDippidyDoo(T[] listOne, T[] listTwo)
+        public void ZippidyDippidy(CustomList<T> listOne, CustomList<T> listTwo)
         {
-            T[] newArray = new T[capacity];
-            //capacity += listOne[count];
-            //capacity += listTwo[count];
-            if (count == capacity)
-            {
-                capacity *= 2;
-                newArray = new T[capacity];
-            }
+            T[] newArray = new T[listOne.Count + listTwo.Count];
+
             for (int i = 0; i < count; i += 2)
             {
                 newArray[i] = listOne[i];
