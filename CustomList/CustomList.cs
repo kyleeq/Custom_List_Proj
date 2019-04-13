@@ -91,16 +91,17 @@ namespace CustomList
 
 
         public void ZippidyDippidy(CustomList<T> listOne, CustomList<T> listTwo)
-        {
-            T[] newArray = new T[listOne.Count + listTwo.Count];
 
-            for (int i = 0; i < count; i += 2)
+        {
+            CustomList<T> newList = new CustomList<T>();
+
+            for (int i = 0; i < listOne.Count; i += 2)
             {
-                newArray[i] = listOne[i];
+                newList[i] = listOne[i/2];
             }
-            for (int j = 1; j < count; j += 2)
+            for (int j = 1; j < listTwo.Count; j += 2)
             {
-                newArray[j] = listOne[j];
+                newList[j] = listOne[j/2];
             }
         }
         public IEnumerator GetEnumerable()

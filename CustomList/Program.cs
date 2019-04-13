@@ -11,11 +11,17 @@ namespace CustomList
         static void Main(string[] args)
         {
             CustomList<int> customList = new CustomList<int>();
-            customList.AddThingy(1);
-            customList.AddThingy(2);
-            customList.AddThingy(3);
-            customList.AddThingy(4);
-            customList.RemoveThingy(3);
+            CustomList<int> listOne = new CustomList<int>();
+            CustomList<int> listTwo = new CustomList<int>();
+
+            listOne.AddThingy(1);
+            listOne.AddThingy(3);
+            listOne.AddThingy(5);
+            listTwo.AddThingy(2);
+            listTwo.AddThingy(4);
+            listTwo.AddThingy(6);
+
+            customList.ZippidyDippidy(listOne, listTwo);
         }
     }
 }
