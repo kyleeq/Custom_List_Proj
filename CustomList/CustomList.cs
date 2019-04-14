@@ -94,7 +94,7 @@ namespace CustomList
 
 
 
-        public void ZippidyDippidy(CustomList<T> listOne, CustomList<T> listTwo)
+        public static CustomList<T> ZippidyDippidy(CustomList<T> listOne, CustomList<T> listTwo)
         {
             CustomList<T> newList = new CustomList<T>();
 
@@ -124,6 +124,7 @@ namespace CustomList
                     }
                 }
             }
+            return newList;
         }
         public IEnumerator GetEnumerable()
         {

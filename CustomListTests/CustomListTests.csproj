@@ -53,6 +53,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Remove_Test.cs" />
     <Compile Include="Enumerable_Test.cs" />
+    <Compile Include="ZippidyDippidy_Test.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
