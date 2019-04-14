@@ -45,6 +45,10 @@ namespace CustomList
         }
 
         // member methods
+        public void HelperMethodAddAndZip()
+        {
+
+        }
 
         public void AddThingy(T newValue)
         {
@@ -96,8 +100,8 @@ namespace CustomList
 
             for (int i = 0; i < listOne.Count; i++)
             {
-                newList[i] = listOne[i];
-                newList[i+1] = listTwo[i];
+                newList.AddThingy(listOne[i]);
+                newList.AddThingy(listTwo[i]);
             }
         }
         public IEnumerator GetEnumerable()
