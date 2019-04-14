@@ -98,13 +98,31 @@ namespace CustomList
         {
             CustomList<T> newList = new CustomList<T>();
 
-            for (int i = 0; i < listOne.Count; i++)
+            if (listOne.Count >= listTwo.Count)
             {
-                newList.HelperMethodAddAndZip(listOne[i]);
-                if (i < listTwo.Count)
+                for (int i = 0; i < listOne.Count; i++)
                 {
-                    newList.HelperMethodAddAndZip(listTwo[i]);
-                }               
+                    newList.HelperMethodAddAndZip(listOne[i]);
+                    if (i < listTwo.Count)
+                    {
+                        newList.HelperMethodAddAndZip(listTwo[i]);
+                    }
+                }
+            }
+            else
+            {
+                for (int i = 0; i < listTwo.Count; i++)
+                {
+                    if (i < listOne.Count)
+                    {
+                        newList.HelperMethodAddAndZip(listOne[i]);
+                        newList.HelperMethodAddAndZip(listTwo[i]);
+                    }
+                    else
+                    {
+                        newList.HelperMethodAddAndZip(listTwo[i]);
+                    }
+                }
             }
         }
         public IEnumerator GetEnumerable()
