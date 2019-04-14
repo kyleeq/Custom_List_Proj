@@ -45,12 +45,7 @@ namespace CustomList
         }
 
         // member methods
-        public void HelperMethodAddAndZip()
-        {
-
-        }
-
-        public void AddThingy(T newValue)
+        private void HelperMethodAddAndZip(T newValue)
         {
             T[] newArray = new T[capacity];
             if (count == capacity)
@@ -69,6 +64,11 @@ namespace CustomList
                 originalArray[count] = newValue;
             }
             count++;
+        }
+
+        public void AddThingy(T newValue)
+        {
+            HelperMethodAddAndZip(newValue);
         }
         public void RemoveThingy(T theRemoved)
         {
@@ -100,8 +100,11 @@ namespace CustomList
 
             for (int i = 0; i < listOne.Count; i++)
             {
-                newList.AddThingy(listOne[i]);
-                newList.AddThingy(listTwo[i]);
+                newList.HelperMethodAddAndZip(listOne[i]);
+                if (i < listTwo.Count)
+                {
+                    newList.HelperMethodAddAndZip(listTwo[i]);
+                }               
             }
         }
         public IEnumerator GetEnumerable()

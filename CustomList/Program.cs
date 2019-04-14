@@ -17,6 +17,9 @@ namespace CustomList
             listOne.AddThingy(1);
             listOne.AddThingy(3);
             listOne.AddThingy(5);
+            listOne.AddThingy(7);
+            listOne.AddThingy(9);
+            listOne.AddThingy(11);
             listTwo.AddThingy(2);
             listTwo.AddThingy(4);
             listTwo.AddThingy(6);
