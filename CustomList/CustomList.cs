@@ -45,7 +45,7 @@ namespace CustomList
         }
 
         // member methods
-        private void HelperMethodAddAndZip(T newValue)
+        private void HelperMethodAddAndExpand(T newValue)
         {
             T[] newArray = new T[capacity];
             if (count == capacity)
@@ -68,7 +68,7 @@ namespace CustomList
 
         public void AddThingy(T newValue)
         {
-            HelperMethodAddAndZip(newValue);
+            HelperMethodAddAndExpand(newValue);
         }
         public void RemoveThingy(T theRemoved)
         {
@@ -102,10 +102,10 @@ namespace CustomList
             {
                 for (int i = 0; i < listOne.Count; i++)
                 {
-                    newList.HelperMethodAddAndZip(listOne[i]);
+                    newList.HelperMethodAddAndExpand(listOne[i]);
                     if (i < listTwo.Count)
                     {
-                        newList.HelperMethodAddAndZip(listTwo[i]);
+                        newList.HelperMethodAddAndExpand(listTwo[i]);
                     }
                 }
             }
@@ -115,13 +115,31 @@ namespace CustomList
                 {
                     if (i < listOne.Count)
                     {
-                        newList.HelperMethodAddAndZip(listOne[i]);
-                        newList.HelperMethodAddAndZip(listTwo[i]);
+                        newList.HelperMethodAddAndExpand(listOne[i]);
+                        newList.HelperMethodAddAndExpand(listTwo[i]);
                     }
                     else
                     {
-                        newList.HelperMethodAddAndZip(listTwo[i]);
+                        newList.HelperMethodAddAndExpand(listTwo[i]);
                     }
+                }
+            }
+            return newList;
+        }
+        public static CustomList<T> operator+(CustomList<T> listOne, CustomList<T> listTwo)
+        {
+            CustomList<T> newList = new CustomList<T>();
+            int newListCount = listOne.Count + listTwo.Count; 
+
+            for (int i = 0; i < newListCount; i++)
+            {
+                if (i < listOne.Count)
+                {
+                    newList.HelperMethodAddAndExpand(listOne[i]);
+                }
+                else
+                {
+                    newList.HelperMethodAddAndExpand(listTwo[i-listOne.Count]);
                 }
             }
             return newList;
