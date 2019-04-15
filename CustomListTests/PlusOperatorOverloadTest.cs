@@ -5,7 +5,7 @@ using CustomList;
 namespace CustomListTests
 {
     [TestClass]
-    public class OperatorOverloadTest
+    public class PlusOperatorOverloadTest
     {
         [TestMethod]
         public void OperatorOverload_TestAtIndex0()

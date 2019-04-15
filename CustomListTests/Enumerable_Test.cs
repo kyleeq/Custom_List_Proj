@@ -12,9 +12,8 @@ namespace CustomListTests
         {
             // Arange
             CustomList<int> customList = new CustomList<int>();
-            
-            int expected = 2;
-            int actual;
+           
+            string actual = "";
 
             // Act
             customList.AddThingy(1);
@@ -22,7 +21,15 @@ namespace CustomListTests
             customList.AddThingy(3);
             customList.AddThingy(4);
             customList.AddThingy(5);
-            actual = customList[1];
+
+            string expected = customList.ToString();
+
+            foreach (int items in customList)
+            {
+                actual += items;
+            }
+            
+
 
             // Assert
             Assert.AreEqual(expected, actual);

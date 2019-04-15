@@ -170,17 +170,13 @@ namespace CustomList
             }
             return newList;
         }
-        public IEnumerator GetEnumerable()
+
+        public IEnumerator GetEnumerator()
         {
             for (int i = 0; i < count; i++)
             {
                 yield return originalArray[i];
             }
-        }
-
-        public IEnumerator GetEnumerator()
-        {
-            throw new NotImplementedException();
         }
     }    
 }
