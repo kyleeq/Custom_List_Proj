@@ -98,8 +98,6 @@ namespace CustomList
             return emptyString;
         }
 
-
-
         public static CustomList<T> ZippidyDippidy(CustomList<T> listOne, CustomList<T> listTwo)
         {
             CustomList<T> newList = new CustomList<T>();
