@@ -13,7 +13,15 @@ namespace CustomList
             CustomList<int> customList = new CustomList<int>();
             CustomList<int> listOne = new CustomList<int>();
             CustomList<int> listTwo = new CustomList<int>();
-                       
+
+            listOne.AddThingy(1);
+            listOne.AddThingy(5);
+            listOne.AddThingy(3);
+            listTwo.AddThingy(3);
+            listTwo.AddThingy(4);
+            listTwo.AddThingy(6);
+
+            customList = listOne - listTwo;
         }
     }
 }

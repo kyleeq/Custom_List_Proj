@@ -86,7 +86,6 @@ namespace CustomList
             originalArray = newArray;
             count--;
         }
-
         public override string ToString()
         {
             string emptyString = "";
@@ -145,6 +144,29 @@ namespace CustomList
                 {
                     newList.HelperMethodAddAndExpand(listTwo[i-listOne.Count]);
                 }
+            }
+            return newList;
+        }
+        public static CustomList<T> operator-(CustomList<T> listOne, CustomList<T> listTwo)
+        {
+            CustomList<T> newList = new CustomList<T>();
+            bool indexChecker = false;
+
+            for (int i = 0; i < listOne.Count; i++)
+            {
+                for (int j = 0; j < listTwo.Count; j++)
+                {
+                    if (listOne[i].Equals(listTwo[j]))
+                    {
+                        indexChecker = true;
+                        continue;
+                    }
+                }
+                if (indexChecker == false)
+                {
+                    newList.HelperMethodAddAndExpand(listOne[i]);
+                }
+                indexChecker = false;
             }
             return newList;
         }
