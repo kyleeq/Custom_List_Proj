@@ -89,7 +89,13 @@ namespace CustomList
 
         public override string ToString()
         {
-            return "";
+            string emptyString = "";
+
+            for (int i = 0; i < Count; i++)
+            {
+                emptyString += originalArray[i];
+            }
+            return emptyString;
         }
 
 
